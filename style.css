@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rancho&display=swap");
+
+:root {
+  --primary-color: #ffffff;
+  --secondary-color: #094b65;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-width: 100vw;
+  min-height: 100vh;
+  /* overflow-x: hidden; */
+  background: var(--primary-color);
+}
+
+#header {
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  padding: 30px 100px;
+  justify-content: space-between;
+  z-index: 1000;
+}
+
+#header .logo {
+  font-size: 2em;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--secondary-color);
+}
+
+/* Make elements children center-aligned 
+*  Make a flex-box to arrange navbar elements in a row */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Spacing of list elements */
+.navbar li {
+  list-style: none;
+  margin-left: 20px;
+}
+
+/* Textstyle of navbar-elements  */
+.navbar li a {
+  padding: 6px 15px;
+  border-radius: 20px;
+  text-decoration: none;
+  color: var(--secondary-color);
+}
+
+/** pseudo-class for hover & currently active page  */
+.navbar li a:hover,
+.navbar li a.active {
+  color: var(--primary-color);
+  background: var(--secondary-color);
+}
+
+/* Parent -> body 
+ * define the positioning, color & alignment of the text here  */
+#main-elems {
+  width: 100%;
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  color: var(--secondary-color);
+}
+
+#main-elems::before {
+  content: "";
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100px;
+  position: absolute;
+  background: linear-gradient(to top, var(--secondary-color), transparent);
+}
+#main-elems img {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  pointer-events: none;
+}
+
+/** for the font size & style of the Big text */
+#main-elems h2 {
+  font-size: 10vw;
+  text-align: center;
+  position: absolute;
+  line-height: 0.55em;
+  font-family: "Rancho", cursive;
+  transform: translateY(-50%);
+  /** Moved this text up to accomodate the btn in the center  */
+}
+
+/** for the font size & style of small text  */
+#main-elems h2 span {
+  font-weight: 400;
+  font-size: 0.2em; /* size = 10vw * 0.2  */
+  letter-spacing: 2px;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Styling of center button */
+#btn {
+  font-size: 1.2em;
+  font-weight: 500;
+  padding: 8px 30px;
+  letter-spacing: 2px;
+  border-radius: 40px;
+  display: inline-block;
+  text-decoration: none;
+  transform: translateY(100px);
+  color: var(--secondary-color);
+  background: var(--primary-color);
+}
+
+.desc {
+  padding: 100px;
+  position: relative;
+  background: var(--secondary-color);
+}
+
+.desc h2 {
+  font-size: 3.5em;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+.desc p {
+  font-size: 1em;
+  color: var(--primary-color);
+}
